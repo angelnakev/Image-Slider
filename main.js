@@ -2,7 +2,7 @@ const slide = document.querySelectorAll(".slide");
 const nextBtn = document.querySelector("#next");
 const prevBtn = document.querySelector("#prev");
 
-const autoScroll = false;
+const autoScroll = true;
 
 const intervalTime = 4000;
 
@@ -19,7 +19,7 @@ const nextSlide = () => {
     slide[0].classList.add("current");
   }
 
-  setTimeout(() => current.classList.remove('current'));
+  setTimeout(() => current.classList.remove('current'), 200);
 };
 
 const prevSlide = () => {
@@ -33,7 +33,7 @@ const prevSlide = () => {
     slide[slide.length - 1].classList.add("current");
   }
 
-  setTimeout(() => current.classList.remove('current'));
+  setTimeout(() => current.classList.remove('current'), 200);
 };
 
 nextBtn.addEventListener('click', e => {
@@ -43,3 +43,7 @@ nextBtn.addEventListener('click', e => {
 prevBtn.addEventListener('click', e => {
     prevSlide()
 })
+
+if (autoScroll) {
+    slideInterval = setInterval(nextSlide, intervalTime);
+}
