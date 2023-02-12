@@ -14,12 +14,12 @@ const nextSlide = () => {
   current.classList.remove("current");
 
   if (current.nextElementSibling) {
-    current.nextElementSibling.classList.add(".current");
+    current.nextElementSibling.classList.add("current");
   } else {
     slide[0].classList.add("current");
   }
 
-  setTimeout(() => current.classList.remove('.current'));
+  setTimeout(() => current.classList.remove('current'));
 };
 
 const prevSlide = () => {
@@ -27,11 +27,19 @@ const prevSlide = () => {
 
   current.classList.remove("current");
 
-  if (current.prevElementSibling) {
-    current.prevElementSibling.classList.add(".current");
+  if (current.previousElementSibling) {
+    current.previousElementSibling.classList.add("current");
   } else {
     slide[slide.length - 1].classList.add("current");
   }
 
-  setTimeout(() => current.classList.remove('.current'));
+  setTimeout(() => current.classList.remove('current'));
 };
+
+nextBtn.addEventListener('click', e => {
+    nextSlide()
+})
+
+prevBtn.addEventListener('click', e => {
+    prevSlide()
+})
