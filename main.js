@@ -19,7 +19,7 @@ const nextSlide = () => {
     slide[0].classList.add("current");
   }
 
-  setTimeout(() => current.classList.remove('current'), 200);
+  setTimeout(() => current.classList.remove("current"), 200);
 };
 
 const prevSlide = () => {
@@ -33,17 +33,27 @@ const prevSlide = () => {
     slide[slide.length - 1].classList.add("current");
   }
 
-  setTimeout(() => current.classList.remove('current'), 200);
+  setTimeout(() => current.classList.remove("current"), 200);
 };
 
-nextBtn.addEventListener('click', e => {
-    nextSlide()
-})
+nextBtn.addEventListener("click", (e) => {
+  nextSlide();
 
-prevBtn.addEventListener('click', e => {
-    prevSlide()
-})
+  if (autoScroll) {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, intervalTime);
+  }
+});
+
+prevBtn.addEventListener("click", (e) => {
+  prevSlide();
+
+  if (autoScroll) {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(prevSlide, intervalTime);
+  }
+});
 
 if (autoScroll) {
-    slideInterval = setInterval(nextSlide, intervalTime);
+  slideInterval = setInterval(nextSlide, intervalTime);
 }
