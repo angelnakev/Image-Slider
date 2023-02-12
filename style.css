@@ -9,7 +9,7 @@ body {
   font-family: "Lato", sans-serif;
   background: #333;
   color: #fff;
-  line-height: 1.5;
+  line-height: 1.7;
 }
 
 .container {
@@ -34,50 +34,71 @@ body {
 }
 
 .slide .content {
-    position: absolute;
-    bottom: 30px;
-    left: -600px;
-    opacity: 0;
-    width: 600px;
-    background-color: rgba(255, 255, 255, 0.6);
-    color: #333;
-    padding: 30px;
+  position: absolute;
+  bottom: 30px;
+  left: -600px;
+  opacity: 0;
+  width: 600px;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #333;
+  padding: 30px;
 }
 
 .slide .content h1 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .slide.current .content {
-    opacity: 1;
-    transform: translateX(600px);
-    transition: all 0.5s ease-in-out 0.3s;
+  opacity: 1;
+  transform: translateX(600px);
+  transition: all 0.5s ease-in-out 0.3s;
 }
 
 .buttons button#next {
-    position: absolute;
-    top: 50%;
-    right: 15px;
+  position: absolute;
+  top: 50%;
+  right: 15px;
 }
 
 .buttons button#prev {
-    position: absolute;
-    top: 50%;
-    left: 15px;
+  position: absolute;
+  top: 50%;
+  left: 15px;
 }
 
 .buttons button {
-    border: 2px solid #fff;
-    background-color: transparent;
-    color: #fff;
-    cursor: pointer;
-    padding: 10px 15px;
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 15px;
 }
 
 .buttons button:hover {
-    background-color: #fff;
-    color: #333;
-    border: 3px solid #333;
+  background-color: #fff;
+  color: #333;
+  border: 3px solid #333;
+}
+
+@media (max-width: 375px) {
+  .slide .content {
+    padding: 10px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 500px) {
+  .slide .content {
+    bottom: -300px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    line-height: 1.4;
+  }
+
+  .slide.current .content {
+    transform: translateY(-300px);
+  }
 }
 
 .slide:first-child {
