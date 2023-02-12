@@ -1,30 +1,53 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
 * {
-    box-sizing: border-box;
-    margin: 0;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 body {
-    font-family: 'Lato', sans-serif;
-    background: #333;
-    color: #fff;
-    line-height: 1.5;
+  font-family: "Lato", sans-serif;
+  background: #333;
+  color: #fff;
+  line-height: 1.5;
 }
 
 .container {
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
-    width: 100vw;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
 }
 
 .slide {
-    position:absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.4s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.slide.current {
+  opacity: 1;
+}
+
+.slide:first-child {
+  background: url("./img/La-Paz.jpg") no-repeat center center/cover;
+}
+.slide:nth-child(2) {
+  background: url("./img/ottawa.jpg") no-repeat center top/cover;
+}
+.slide:nth-child(3) {
+  background: url("./img/reykjavik.jpg") no-repeat center top/cover;
+}
+.slide:nth-child(4) {
+  background: url("./img/tokyo.jpg") no-repeat center top/cover;
+}
+.slide:nth-child(5) {
+  background: url("./img/athens.jpg") no-repeat center top/cover;
+}
+.slide:nth-child(6) {
+  background: url("./img/havana.jpg") no-repeat center top/cover;
 }
